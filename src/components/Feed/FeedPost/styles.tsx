@@ -4,9 +4,7 @@ export const FeedPostContainer = styled.article`
   display: flex;
   flex-direction: column;
 
-  gap: 10px;
-
-  padding: 10px;
+  gap: 5px;
 
   min-width: 300px;
   max-width: 700px;
