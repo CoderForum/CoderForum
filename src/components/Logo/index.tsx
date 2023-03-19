@@ -21,8 +21,8 @@ const LogoContainer = styled.div`
   span {
     font-size: 1.3rem;
     font-weight: bold;
+    user-select: none;
   }
-
 `;
 
 export default function Logo() {

@@ -5,7 +5,7 @@ export const NavbarContainer = styled.header`
   align-items: center;
   justify-content: space-between;
   padding: 15px 30px;
-  background-color: #343a40;
+  background-color: #272a2b;
 
   width: 100%;
 
