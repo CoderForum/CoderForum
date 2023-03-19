@@ -29,7 +29,7 @@ export default function Logo() {
   return (
     <LogoContainer>
       <TbNews />
-      <span>DevTalk</span>
+      <span>CoderForum</span>
     </LogoContainer>
   );
 }
