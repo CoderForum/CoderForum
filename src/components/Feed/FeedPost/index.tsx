@@ -1,16 +1,6 @@
 import Link from 'next/link';
+import type { PostProps } from '@/components/Post';
 import { FeedPostContainer, FeedPostFooter, FeedPostHeader } from './styles';
-
-type FeedPostProps = {
-  author: {
-    username: string;
-  };
-  comments: number;
-  createdAt: number;
-  title: string;
-  upvotes: number;
-  url: string;
-};
 
 export default function FeedPost({
   author,
@@ -19,7 +9,7 @@ export default function FeedPost({
   title,
   upvotes,
   url,
-}: FeedPostProps) {
+}: PostProps) {
   return (
     <FeedPostContainer>
       
