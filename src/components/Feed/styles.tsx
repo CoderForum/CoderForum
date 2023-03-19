@@ -2,12 +2,16 @@ import styled from 'styled-components';
 
 export const FeedContainer = styled.main`
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
   gap: 15px;
-  padding: 20px;
 
-  width: 100%;
+  padding-top: 35px;
+
+  @media (max-width: 768px) {
+    padding: 10px;
+    width: 100%;
+  }
 
   .posts {
     display: flex;
