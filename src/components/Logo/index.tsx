@@ -1,3 +1,5 @@
+'use client';
+
 import { TbNews } from 'react-icons/tb';
 import styled from 'styled-components';
 

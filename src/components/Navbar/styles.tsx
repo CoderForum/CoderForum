@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const NavbarContainer = styled.header`
   display: flex;
@@ -21,6 +21,12 @@ export const NavbarContainer = styled.header`
       &:hover {
         color: #ccc;
       }
+    }
+  }
+
+  @media (max-width: 768px) {
+    nav {
+      display: none;
     }
   }
 `;
