@@ -10,7 +10,7 @@ export const FeedPostContainer = styled.article`
   max-width: 700px;
 
   * {
-    color: #000;
+    color: #fff;
   }
 
   a {
@@ -38,7 +38,7 @@ export const FeedPostFooter = styled.div`
   }
 
   * {
-    color: #495057;
+    color: #a7a7a7;
   }
 
   span {

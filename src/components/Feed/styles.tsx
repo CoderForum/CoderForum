@@ -8,6 +8,10 @@ export const FeedContainer = styled.main`
 
   padding-top: 35px;
 
+  > h1 {
+    color: #fff;
+  }
+
   @media (max-width: 768px) {
     padding: 10px;
     width: 100%;
