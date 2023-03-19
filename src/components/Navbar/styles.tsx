@@ -15,7 +15,7 @@ export const NavbarContainer = styled.header`
 
   nav {
     display: flex;
-    gap: 10px;
+    gap: 15px;
     a {
       text-decoration: none;
       &:hover {

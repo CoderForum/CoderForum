@@ -15,7 +15,7 @@ export default function Feed() {
           createdAt={0}
           title="Vercel cria própria fonte para uso livre: Vercel Sans"
           upvotes={0}
-          url="/johndoe/vercel-cria-propria-fonte-para-uso-livre-vercel-sans"
+          url="/posts/vercel-cria-propria-fonte-para-uso-livre-vercel-sans"
         />
         <FeedPost
           author={{ username: 'davipatricio' }}
@@ -23,7 +23,7 @@ export default function Feed() {
           createdAt={0}
           title="OpenAI lança GPT-4"
           upvotes={22}
-          url="/davipatricio/openai-lanca-gpt4"
+          url="/posts/openai-lanca-gpt4"
         />
         <FeedPost
           author={{ username: 'clyde' }}
@@ -31,7 +31,7 @@ export default function Feed() {
           createdAt={0}
           title="Discord integra Inteligência Artificial ao chat"
           upvotes={10}
-          url="/clyde/discord-integra-inteligencia-artificial-ao-chat"
+          url="/posts/discord-integra-inteligencia-artificial-ao-chat"
         />
       </div>
     </FeedContainer>
