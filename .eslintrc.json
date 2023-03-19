@@ -9,8 +9,10 @@
 		"neon/react",
 		"neon/next",
 		"neon/edge",
-		"neon/prettier"
+		"neon/prettier",
+		"plugin:styled-components-a11y/recommended"
 	],
+  "plugins": ["styled-components-a11y"],
 	"settings": {
 		"react": {
 			"version": "detect"
