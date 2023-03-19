@@ -1,9 +1,7 @@
 import styled from 'styled-components';
-import { FeedPostHeader } from '../Feed/FeedPost/styles';
 
 export const PostContainer = styled.main`
   display: flex;
-  align-items: center;
   flex-direction: column;
   gap: 30px;
 
@@ -13,6 +11,7 @@ export const PostContainer = styled.main`
 
   @media (max-width: 768px) {
     padding: 10px;
+    margin: 0;
     width: 100%;
   }
 `;

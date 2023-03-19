@@ -2,19 +2,21 @@ import styled from 'styled-components';
 
 export const FeedContainer = styled.main`
   display: flex;
-  align-items: center;
   flex-direction: column;
   gap: 15px;
 
-  padding-top: 35px;
+  margin: 35px auto 0 auto;
 
-  > h1 {
-    color: #fff;
-  }
+  width: 80%;
 
   @media (max-width: 768px) {
     padding: 10px;
+    margin: 0;
     width: 100%;
+  }
+
+  > h1 {
+    color: #fff;
   }
 
   .posts {
