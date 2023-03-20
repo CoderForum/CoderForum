@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import ContentLoader from 'react-content-loader';
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
@@ -34,6 +35,10 @@ export default function Post({ id }: { id: string }) {
     `/api/posts/${id}`,
     fetcher
   );
+
+  if (error) {
+    notFound();
+  }
 
   return (
     <PostContainer>
