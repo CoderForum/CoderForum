@@ -10,7 +10,6 @@ export default function Navbar() {
       <Logo />
 
       <nav>
-        <Link href="/">Início</Link>
         <Link href="/posts">Publicações</Link>
         <Link
           href="/auth/login"
