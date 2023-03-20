@@ -93,3 +93,36 @@ export const PostContent = styled.article`
     font-weight: 600;
   }
 `;
+
+export const PostSocial = styled.section`
+  &,
+  .likes {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  justify-content: space-between;
+
+  /* Comment stats */
+  > span {
+    color: #a7a7a7;
+    font-size: 1.2rem;
+  }
+
+  .likes {
+    svg,
+    span {
+      color: tomato;
+      font-size: 1.5rem;
+    }
+
+    &:hover {
+      cursor: pointer;
+      svg,
+      span {
+        color: red;
+      }
+    }
+  }
+`;
