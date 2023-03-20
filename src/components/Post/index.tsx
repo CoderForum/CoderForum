@@ -2,7 +2,9 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import ContentLoader from 'react-content-loader';
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
+import useSWR from 'swr';
 import { FeedPostFooter } from '../Feed/FeedPost/styles';
+import { ArticleSkeleton, TitleSkeleton } from './skeletons';
 import {
   PostAuthor,
   PostContainer,
@@ -11,7 +13,7 @@ import {
   PostSocial,
 } from './styles';
 
-export type PostProps = {
+export type PostResponse = {
   author: {
     username: string;
   };
@@ -23,56 +25,24 @@ export type PostProps = {
   url: string;
 };
 
-const Loader = (
-  <ContentLoader
-    backgroundColor="#7e7e7ec5"
-    foregroundColor="#d1d1d1b0"
-    speed={2}
-    style={{ borderRadius: '5px', height: '40px', width: '100%' }}
-  >
-    <rect height="40px" rx="0" ry="0" width="100%" />
-  </ContentLoader>
-);
+const fetcher = async (url: string) =>
+  // eslint-disable-next-line promise/prefer-await-to-then
+  fetch(url).then(async (res) => res.json());
 
-const Article = (
-  <ContentLoader
-  backgroundColor="#7e7e7ec5"
-  foregroundColor="#d1d1d1b0"
-    style={{ borderRadius: '5px', height: '360px', width: '100%' }}
-  >
-    <rect height="20" rx="4" ry="4" width="100%" x="0" y="13" />
-    <rect height="20" rx="4" ry="4" width="70%" x="0" y="45" />
-    <rect height="20" rx="4" ry="4" width="100%" x="0" y="77" />
-    <rect height="20" rx="4" ry="4" width="100%" x="0" y="109" />
-    <rect height="20" rx="4" ry="4" width="40%" x="0" y="141" />
-  </ContentLoader>
-);
-
-export default function Post({
-  author,
-  comments,
-  createdAt,
-  hasUpvoted,
-  title,
-  upvotes,
-  url,
-}: PostProps) {
-  const [loaded, setLoaded] = useState(false);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoaded(true);
-    }, 2_000);
-  }, []);
+export default function Post({ id }: { id: string }) {
+  const { data, error, isLoading } = useSWR<PostResponse>(
+    `/api/posts/${id}`,
+    fetcher
+  );
 
   return (
     <PostContainer>
       <PostHeader>
-        <h1>{loaded ? title : Loader}</h1>
+        <h1>{data?.title ?? TitleSkeleton}</h1>
 
         <FeedPostFooter>
-          <span>{upvotes} votos</span>
-          <span>{comments} comentários</span>
+          <span>{data?.upvotes ?? '-'} votos</span>
+          <span>{data?.comments ?? '-'} comentários</span>
           <span>há 1 hora</span>
         </FeedPostFooter>
 
@@ -81,7 +51,7 @@ export default function Post({
           <img alt="Avatar" src="https://i.pravatar.cc/150?img=1" />
           <span>
             Escrito por:{' '}
-            <Link href={`/${author.username}`}>{author.username}</Link>
+            <Link href={`/${data?.author.username ?? ''}`}>{data?.author.username ?? 'carregando...'}</Link>
           </span>
         </PostAuthor>
       </PostHeader>
@@ -94,16 +64,16 @@ export default function Post({
         sit amet consectetur adipisicing elit. Amet dolores quis cumque autem
         quasi, voluptas facilis in quos animi atque minima deleniti consequuntur
         impedit iste nihil illum fugit sed reiciendis. */}
-        {Article}
+        {ArticleSkeleton}
       </PostContent>
 
       <PostSocial>
         <div className="likes">
-          {hasUpvoted ? <AiFillHeart /> : <AiOutlineHeart />}
-          <span>{upvotes}</span>
+          {data?.hasUpvoted ? <AiFillHeart /> : <AiOutlineHeart />}
+          <span>{data?.upvotes ?? '-'}</span>
         </div>
 
-        <span>{comments} comentários</span>
+        <span>{data?.comments ?? '-'} comentários</span>
       </PostSocial>
     </PostContainer>
   );

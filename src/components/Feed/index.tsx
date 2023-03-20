@@ -13,6 +13,7 @@ export default function Feed() {
           author={{ username: 'johndoe' }}
           comments={0}
           createdAt={0}
+          hasUpvoted={false}
           title="Vercel cria própria fonte para uso livre: Vercel Sans"
           upvotes={0}
           url="/posts/vercel-cria-propria-fonte-para-uso-livre-vercel-sans"
@@ -21,6 +22,7 @@ export default function Feed() {
           author={{ username: 'davipatricio' }}
           comments={15}
           createdAt={0}
+          hasUpvoted={false}
           title="OpenAI lança GPT-4"
           upvotes={22}
           url="/posts/openai-lanca-gpt4"
@@ -29,6 +31,7 @@ export default function Feed() {
           author={{ username: 'clyde' }}
           comments={5}
           createdAt={0}
+          hasUpvoted={false}
           title="Discord integra Inteligência Artificial ao chat"
           upvotes={10}
           url="/posts/discord-integra-inteligencia-artificial-ao-chat"

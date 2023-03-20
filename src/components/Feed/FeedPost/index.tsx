@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import type { PostProps } from '@/components/Post';
+import type { PostResponse } from '@/components/Post';
 import { FeedPostContainer, FeedPostFooter, FeedPostHeader } from './styles';
 
 export default function FeedPost({
@@ -9,7 +9,7 @@ export default function FeedPost({
   title,
   upvotes,
   url,
-}: PostProps) {
+}: PostResponse) {
   return (
     <FeedPostContainer>
       
