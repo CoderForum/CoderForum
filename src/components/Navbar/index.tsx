@@ -13,7 +13,7 @@ export default function Navbar() {
         <Link href="/posts">Publicações</Link>
         <Link
           href="/auth/login"
-          style={{ marginLeft: 'auto', fontWeight: 'bold' }}
+          style={{ fontWeight: 'bold' }}
         >
           Autenticar-se
         </Link>
