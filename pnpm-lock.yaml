@@ -17,6 +17,7 @@ specifiers:
   styled-components: 5.3.9
   swr: ^2.1.0
   typescript: 5.0.2
+  zustand: ^4.3.6
 
 dependencies:
   next: 13.2.5-canary.8_biqbaboplfbrettd7655fr4n2y
@@ -27,6 +28,7 @@ dependencies:
   styled-components: 5.3.9_biqbaboplfbrettd7655fr4n2y
   swr: 2.1.0_react@18.2.0
   typescript: 5.0.2
+  zustand: 4.3.6_react@18.2.0
 
 devDependencies:
   '@types/node': 18.15.3
@@ -3747,3 +3749,19 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
+
+  /zustand/4.3.6_react@18.2.0:
+    resolution: {integrity: sha512-6J5zDxjxLE+yukC2XZWf/IyWVKnXT9b9HUv09VJ/bwGCpKNcaTqp7Ws28Xr8jnbvnZcdRaidztAPsXFBIqufiw==}
+    engines: {node: '>=12.7.0'}
+    peerDependencies:
+      immer: '>=9.0'
+      react: '>=16.8'
+    peerDependenciesMeta:
+      immer:
+        optional: true
+      react:
+        optional: true
+    dependencies:
+      react: 18.2.0
+      use-sync-external-store: 1.2.0_react@18.2.0
+    dev: false

@@ -10,7 +10,7 @@ export const FeedPostContainer = styled.article`
   max-width: 700px;
 
   * {
-    color: #fff;
+    color: ${({ theme }) => theme.colors.textPrimary};
   }
 
   a {
@@ -20,7 +20,7 @@ export const FeedPostContainer = styled.article`
 
 export const FeedPostHeader = styled.div`
   p {
-    font-size: 1.25rem;
+    font-size: 1.35rem;
     font-weight: bold;
 
     a:hover {
@@ -32,26 +32,30 @@ export const FeedPostHeader = styled.div`
 export const FeedPostFooter = styled.div`
   display: flex;
 
-  @media (max-width: 768px) {
-    gap: 5px;
-    flex-wrap: wrap;
-  }
-
   * {
-    color: #a7a7a7;
+    color: ${({ theme }) => theme.colors.textSecondary};
   }
 
   span {
-    font-size: 0.9rem;
+    font-size: 1rem;
+    margin-right: 5px;
 
-    /* add a dot between span elements but not into the last one */
     &:not(:last-child)::after {
       content: '•';
-      margin: 0 5px;
+      margin-left: 5px;
+      color: ${({ theme }) => theme.colors.textSecondary};
     }
 
     a:hover {
       color: #1864ab;
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+
+    span {
+      margin-bottom: 5px;
     }
   }
 `;

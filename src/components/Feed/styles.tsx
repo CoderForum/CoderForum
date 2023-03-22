@@ -9,19 +9,19 @@ export const FeedContainer = styled.main`
 
   width: 80%;
 
-  @media (max-width: 768px) {
-    padding: 10px;
-    margin: 0;
-    width: 100%;
-  }
-
   > h1 {
-    color: #fff;
+    color: ${({ theme }) => theme.colors.textPrimary};
   }
 
   .posts {
     display: flex;
     flex-direction: column;
     gap: 15px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 10px;
+    margin: 0;
+    width: 100%;
   }
 `;

@@ -16,7 +16,8 @@
     "react-icons": "^4.8.0",
     "styled-components": "5.3.9",
     "swr": "^2.1.0",
-    "typescript": "5.0.2"
+    "typescript": "5.0.2",
+    "zustand": "^4.3.6"
   },
   "devDependencies": {
     "@types/node": "18.15.3",

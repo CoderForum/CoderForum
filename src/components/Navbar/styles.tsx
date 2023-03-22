@@ -3,23 +3,41 @@ import styled from 'styled-components';
 export const NavbarContainer = styled.header`
   display: flex;
   align-items: center;
-  justify-content: space-between;
   padding: 15px 30px;
-  background-color: #272a2b;
+  background-color: ${({ theme }) => theme.colors.secondary};
 
   width: 100%;
 
   * {
-    color: #fff;
+    color: ${({ theme }) => theme.colors.textPrimary};
+  }
+
+  a {
+    text-decoration: none;
+
+    &.posts {
+      margin-left: 15px;
+    }
+
+    &:hover {
+      color: ${({ theme }) => theme.colors.textSecondary};
+    }
   }
 
   nav {
     display: flex;
+    align-items: center;
     gap: 15px;
-    a {
-      text-decoration: none;
-      &:hover {
-        color: #ccc;
+    margin-left: auto;
+
+    /* Theme Switcher */
+    svg {
+      cursor: pointer;
+      fill: ${({ theme }) => theme.colors.textPrimary};
+      font-size: 1.5rem;
+
+      &:hover path {
+        fill: ${({ theme }) => theme.colors.textSecondary};
       }
     }
   }
