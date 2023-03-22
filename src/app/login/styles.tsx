@@ -13,11 +13,11 @@ export const PageContainer = styled.div`
   }
 
   /* use height until page end (navbar at top) */
-  height: calc(100vh - 55px);
+  height: calc(100vh - 70px);
   width: 100%;
 `;
 
-export const Card = styled.div`
+export const Card = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -48,7 +48,7 @@ export const CardHeader = styled.section`
   }
 `;
 
-export const CardBody = styled.form`
+export const CardBody = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -73,13 +73,21 @@ export const CardFooter = styled.section`
   button {
     border: none;
     border-radius: 5px;
-    padding: 10px;
 
-    background-color: #3b5bdb;
+    cursor: pointer;
+    padding: 10px 50px;
 
     color: #fff;
+    background-color: #3b5bdb;
+
     font-size: 1.2rem;
     font-weight: bold;
     text-transform: uppercase;
+
+    transition: 0.2s;
+
+    &:hover {
+      background-color: #2a3db1;
+    }
   }
 `;

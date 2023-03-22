@@ -1,11 +1,16 @@
 'use client';
 
+import { useCallback } from 'react';
 import { Card, CardBody, CardFooter, CardHeader, PageContainer } from './styles';
 
 export default function Login() {
+  const handleSubmit = useCallback((event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+  }, []);
+
   return (
     <PageContainer>
-      <Card>
+      <Card onSubmit={handleSubmit}>
         <CardHeader>
           <h1>Login</h1>
           <span>Insira suas credenciais para se autenticar.</span>
