@@ -13,6 +13,7 @@ export const NavbarContainer = styled.header`
   }
 
   a {
+    font-size: 1.2rem;
     text-decoration: none;
 
     &.posts {

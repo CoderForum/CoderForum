@@ -24,7 +24,7 @@ export const PostHeader = styled.section`
   width: 100%;
 
   > h1 {
-    color: #fff;
+    color: ${({ theme }) => theme.colors.textPrimary};
     font-size: 2.1rem;
 
     @media (max-width: 768px) {
@@ -60,7 +60,7 @@ export const PostAuthor = styled.div`
   }
 
   span {
-    color: #fff;
+    color: ${({ theme }) => theme.colors.textPrimary};
     font-size: 1.3rem;
 
     @media (max-width: 768px) {
@@ -68,7 +68,7 @@ export const PostAuthor = styled.div`
     }
 
     a {
-      color: #fff;
+      color: ${({ theme }) => theme.colors.textPrimary};
       text-decoration: none;
       font-weight: 600;
 
@@ -80,7 +80,7 @@ export const PostAuthor = styled.div`
 `;
 
 export const PostContent = styled.article`
-  color: #dddddd;
+  color: ${({ theme }) => theme.colors.textPrimary};
   font-size: 1.35em;
 
   @media (max-width: 768px) {
@@ -106,7 +106,7 @@ export const PostSocial = styled.section`
 
   /* Comment stats */
   > span {
-    color: #a7a7a7;
+    color: ${({ theme }) => theme.colors.textSecondary};
     font-size: 1.2rem;
   }
 

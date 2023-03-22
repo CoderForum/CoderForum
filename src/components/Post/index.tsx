@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import ContentLoader from 'react-content-loader';
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import useSWR from 'swr';
@@ -31,19 +31,19 @@ const fetcher = async (url: string) =>
   fetch(url).then(async (res) => res.json());
 
 export default function Post({ id }: { id: string }) {
-  const { data, error, isLoading } = useSWR<PostResponse>(
+  const { data, error } = useSWR<PostResponse>(
     `/api/posts/${id}`,
     fetcher
   );
 
   if (error) {
-    notFound();
+    // notFound();
   }
 
   return (
     <PostContainer>
       <PostHeader>
-        <h1>{data?.title ?? TitleSkeleton}</h1>
+        <h1>{data?.title ?? <TitleSkeleton />}</h1>
 
         <FeedPostFooter>
           <span>{data?.upvotes ?? '-'} votos</span>
@@ -53,10 +53,17 @@ export default function Post({ id }: { id: string }) {
 
         <PostAuthor>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img alt="Avatar" src="https://i.pravatar.cc/150?img=1" />
+          <img
+            alt="Avatar"
+            decoding="async"
+            loading="lazy"
+            src="https://i.pravatar.cc/150?img=1"
+          />
           <span>
             Escrito por:{' '}
-            <Link href={`/${data?.author.username ?? ''}`}>{data?.author.username ?? 'carregando...'}</Link>
+            <Link href={`/${data?.author.username ?? ''}`}>
+              {data?.author.username ?? '...'}
+            </Link>
           </span>
         </PostAuthor>
       </PostHeader>
@@ -69,7 +76,7 @@ export default function Post({ id }: { id: string }) {
         sit amet consectetur adipisicing elit. Amet dolores quis cumque autem
         quasi, voluptas facilis in quos animi atque minima deleniti consequuntur
         impedit iste nihil illum fugit sed reiciendis. */}
-        {ArticleSkeleton}
+        <ArticleSkeleton />
       </PostContent>
 
       <PostSocial>

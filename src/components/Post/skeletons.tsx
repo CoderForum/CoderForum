@@ -1,6 +1,6 @@
 import ContentLoader from 'react-content-loader';
 
-export const TitleSkeleton = (
+export const TitleSkeleton= () => (
   <ContentLoader
     backgroundColor="#7e7e7ec5"
     foregroundColor="#d1d1d1b0"
@@ -11,7 +11,7 @@ export const TitleSkeleton = (
   </ContentLoader>
 );
 
-export const ArticleSkeleton = (
+export const ArticleSkeleton = () => (
   <ContentLoader
     backgroundColor="#7e7e7ec5"
     foregroundColor="#d1d1d1b0"
