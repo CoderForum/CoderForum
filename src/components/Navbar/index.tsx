@@ -11,7 +11,9 @@ export default function Navbar() {
   const theme = useTheme();
 
   const handleThemeChange = useCallback(() => {
-    theme.setTheme(theme.theme === 'dark' ? 'light' : 'dark');
+    const themeToSet = theme.theme === 'dark' ? 'light' : 'dark';
+    theme.setTheme(themeToSet);
+    localStorage.setItem('theme', themeToSet);
   }, [theme]);
 
   return (

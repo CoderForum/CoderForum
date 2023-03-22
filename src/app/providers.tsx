@@ -8,12 +8,22 @@ import lightTheme from '@/styles/themes/light';
 
 export default function Providers({ children }: { children: React.ReactNode }) {
   const [themeObject, setThemeObject] = useState(darkTheme);
-  const { theme } = useTheme();
+  // eslint-disable-next-line @typescript-eslint/unbound-method
+  const { theme, setTheme } = useTheme();
 
-  useEffect(
-    () => setThemeObject(theme === 'dark' ? darkTheme : lightTheme),
-    [theme]
-  );
+  useEffect(() => {
+    const currentTheme = localStorage.getItem('theme');
+    
+    if (!['dark', 'light'].includes(theme)) {
+      localStorage.setItem('theme', 'dark');
+      setThemeObject(darkTheme);
+      setTheme('dark');
+      return;
+    }
+
+    setThemeObject(currentTheme === 'dark' ? darkTheme : lightTheme);
+    localStorage.setItem('theme', theme);
+  }, [theme, setTheme]);
 
   return <ThemeProvider theme={themeObject}>{children}</ThemeProvider>;
 }
